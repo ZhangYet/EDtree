@@ -128,7 +128,9 @@ void grow_tree(SEXP node, SEXP learnsample, SEXP weights, SEXP where, SEXP dista
 }
 
 /*
-  learnsaple : 
+  learnsample : at first I want to design a new class for learnsample. But I 
+  can't use a self-defined object with Rcpp. As a result learnsample will be a
+  List contain data.frame and other type of data.
  */
 
 RcppExport SEXP EDtree_Grow(SEXP learnSample, SEXP weights, SEXP where, SEXP distance, SEXP controls)
