@@ -6,5 +6,6 @@ rcpp_hello_world <- function() {
 }
 
 EDtree <- function(learnsample, weight, distance, controls){
+    where <- rep(0, length(weight))
     tree <- .Call("EDtree_Grow", learnsample, weight, where, distance, controls)
 }
