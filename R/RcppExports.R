@@ -5,7 +5,7 @@ rcpp_hello_world <- function() {
     .Call('edtree_rcpp_hello_world', PACKAGE = 'edtree')
 }
 
-EDtree <- function(learnsample, weight, distance, controls){
+edtree <- function(learnsample, weight, distance, controls){
     where <- rep(0, length(weight))
     tree <- .Call("EDtree_Grow", learnsample, weight, where, distance, controls)
 }

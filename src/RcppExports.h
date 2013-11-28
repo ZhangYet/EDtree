@@ -18,7 +18,7 @@ SEXP get_leftnode(SEXP);
 SEXP get_rightnode(SEXP);
 
 
-void init_node(SEXP, SEXP, SEXP, SEXP);
+RcppExport SEXP init_node(SEXP, SEXP, SEXP, SEXP);
 void grow_tree(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, int*, int);// the main function to do the 
 
 RcppExport SEXP EDtree_Grow(SEXP, SEXP, SEXP, SEXP, SEXP);
