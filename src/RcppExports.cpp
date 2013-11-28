@@ -63,7 +63,7 @@ SEXP get_rightnode(SEXP node)
   return ans;
 }
 
-void init_node(SEXP node, SEXP learnsample, SEXP weights, SEXP where)
+RcppExport SEXP init_node(SEXP node, SEXP learnsample, SEXP weights, SEXP where)
 {
   /*
     The key class of this package may be the node class. In fact it is a List.
@@ -83,6 +83,7 @@ void init_node(SEXP node, SEXP learnsample, SEXP weights, SEXP where)
   ans["split"] = Rcpp::List::create(); // record the split point and the variable
   ans["isTerminal"] = false;
   node = Rcpp::wrap(ans);
+  return node;
   /*
     We create a list and at last turn it back to an SEXP object. This is not a wise choise.
     But what I want is some kind of unity, as we can use the same formal parameter.
@@ -99,6 +100,7 @@ void grow_tree(SEXP node, SEXP learnsample, SEXP weights, SEXP where, SEXP dista
   bool stop;
 
   stop = get_nodeterminal(node, controls);
+
   if(stop)
     {
       ED_Node(node, learnsample, weights, controls, 1, depth);
