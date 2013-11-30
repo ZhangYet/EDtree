@@ -9,3 +9,4 @@ EDtreeTest <- function(){
     controls <- list()
     test <- .Call("EDtree", learnsample, weight, ditance, controls)
 }
+
